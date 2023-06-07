@@ -27,10 +27,9 @@ service.post('/insert', async (req, res) => {
 // GET, Récupère les données de la base de données
 service.get('/get', async (req, res) => {
   try {
-    const client = await MongoClient.connect('mongodb+srv://ibrahim:ibrahim@cluster0.uhijttw.mongodb.net/?retryWrites=true&w=majority');
+    const client = await MongoClient.connect('mongodb+srv://ibrahimkr:ibrahimkr@cluster0.uhijttw.mongodb.net/?retryWrites=true&w=majority');
     const db = client.db('poolDatabase');
-
-    const collection = db.collection('access');
+    const collection = db.collection('pool');
     const documents = await collection.find().toArray();
 
     client.close();
