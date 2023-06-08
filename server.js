@@ -3,7 +3,8 @@ const { MongoClient } = require('mongodb');
 
 const service = express();
 const port = 6969;
-
+const cors = require('cors');
+service.use(cors());
 service.use(express.json());
 
 // POST, Insert dans la base de données
